@@ -16,7 +16,6 @@ for (type1 in 0:3) {
         predictions_2 <- data[data$prediction_type == type2, ]
         # T-test of all data
         result <- t.test(x=predictions_1$time_taken, y=predictions_2$time_taken)
-        print(result)
         p_values_t_test[type1 + 1, type2 + 1] = result$p.value
   }  
 }

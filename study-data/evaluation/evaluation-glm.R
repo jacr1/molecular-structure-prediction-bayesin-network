@@ -12,20 +12,48 @@ data <- data[order(data$user_id, data$smiles),]
 
 # Shows skew of data to the right hitting that the values are not disrtubted correctly
 plot(density(data$time_taken))
-#####################################################
-# First Model
+
 par(mfrow=c(2,2))
+#####################################################
+# Simple GLM for time taken vs all vars  
 glm <- glm(formula = data$time_taken~data$predictions_used + data$prediction_type + data$smiles_length + data$rubs + data$undos + data$user_structure, 
            family="Gamma")
 summary(glm)
 plot(glm)
-Anova(glm)
 
 #####################################################
-# Second Model
+# Removing variables prediction_type and prediction_user_structure
 glm <- glm(formula = data$time_taken~data$predictions_used + data$smiles_length + data$rubs + data$undos, 
            family="Gamma")
 summary(glm)
 plot(glm, pch = 10)
-Anova(glm)
+
+#####################################################
+# Third Model
+# Removing Outlier 345
+dataOutlier <- data[-c(345), ]
+glm <- glm(formula = dataOutlier$time_taken~dataOutlier$predictions_used + dataOutlier$smiles_length + dataOutlier$rubs + dataOutlier$undos, 
+           family="Gamma")
+summary(glm)
+plot(glm, pch = 10)
+
+#####################################################
+# Number of total errors made
+data$total_errors <- data$rubs + data$undos + 0.0000001
+dataWithErrors <- data[data$total_errors > 0,]
+glm <- glm(formula = dataWithErrors$total_errors~dataWithErrors$predictions_used + dataWithErrors$prediction_type + dataWithErrors$smiles_length + dataWithErrors$user_structure
+          , family="Gamma")
+summary(glm)
+plot(glm, pch = 10)
+
+#####################################################
+# Number of total errors made, removed variables not needed
+data$total_errors <- data$rubs + data$undos + 0.00000001
+dataWithErrors <- data[data$total_errors > 0,]
+glm <- glm(formula = dataWithErrors$total_errors~dataWithErrors$predictions_used + dataWithErrors$smiles_length)
+summary(glm)
+plot(glm, pch = 10)
+
+
+
 
