@@ -31,7 +31,7 @@ plot(glm, pch = 10)
 #####################################################
 # Third Model
 # Removing Outlier 345
-dataOutlier <- data[-c(345), ]
+dataOutlier <- data[-c(333), ]
 glm <- glm(formula = dataOutlier$time_taken~dataOutlier$predictions_used + dataOutlier$smiles_length + dataOutlier$rubs + dataOutlier$undos, 
            family="Gamma")
 summary(glm)
