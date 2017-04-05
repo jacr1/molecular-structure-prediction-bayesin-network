@@ -1,6 +1,3 @@
-install.packages(ROCR)
-library (ROCR);
-
 data = read.csv("final-data-python.csv", sep=",", head=TRUE)
 data$prediction_type <- as.factor(data$prediction_type)
 data$correctly_drawn <- as.logical(data$correctly_drawn)
@@ -30,6 +27,4 @@ sum(not_pred_used$total_errors)
 mean(pred_used$smiles_length)
 mean(not_pred_used$smiles_length)
 
-
 t.test(x=not_pred_used$total_errors, y=pred_used$total_errors)
-
