@@ -37,22 +37,6 @@ glm <- glm(formula = dataOutlier$time_taken~dataOutlier$predictions_used + dataO
 summary(glm)
 plot(glm, pch = 10)
 
-#####################################################
-# Number of total errors made
-data$total_errors <- data$rubs + data$undos + 0.0000001
-dataWithErrors <- data[data$total_errors > 0,]
-glm <- glm(formula = dataWithErrors$total_errors~dataWithErrors$predictions_used + dataWithErrors$prediction_type + dataWithErrors$smiles_length + dataWithErrors$user_structure
-          , family="Gamma")
-summary(glm)
-plot(glm, pch = 10)
-
-#####################################################
-# Number of total errors made, removed variables not needed
-data$total_errors <- data$rubs + data$undos + 0.00000001
-dataWithErrors <- data[data$total_errors > 0,]
-glm <- glm(formula = dataWithErrors$total_errors~dataWithErrors$predictions_used + dataWithErrors$smiles_length)
-summary(glm)
-plot(glm, pch = 10)
 
 
 
