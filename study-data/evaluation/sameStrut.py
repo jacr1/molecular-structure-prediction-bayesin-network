@@ -1,3 +1,5 @@
+# Require indigo lib to be download 
+# http://lifescience.opensource.epam.com/indigo/
 from indigo import *
 import csv
 

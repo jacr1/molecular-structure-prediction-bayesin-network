@@ -24,6 +24,9 @@ t.test(x=not_pred_used$correctly_drawn, y=pred_used$correctly_drawn)
 sum(pred_used$total_errors)
 sum(not_pred_used$total_errors)
 
+mean(pred_used$total_errors)
+mean(not_pred_used$total_errors)
+
 mean(pred_used$smiles_length)
 mean(not_pred_used$smiles_length)
 
