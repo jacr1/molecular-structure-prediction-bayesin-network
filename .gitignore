@@ -1,1 +1,4 @@
-/rest-api/build
+rest-api/build
+rest-api/.gradle/
+rest-api/libs/rdkit/
+
