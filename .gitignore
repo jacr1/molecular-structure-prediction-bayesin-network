@@ -1,3 +1,5 @@
+font-end/libs
+front-end/node_modules/
 rest-api/build
 rest-api/.gradle/
 rest-api/libs/rdkit/

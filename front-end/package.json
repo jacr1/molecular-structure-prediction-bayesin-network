@@ -1,0 +1,15 @@
+{
+    "name": "molecular-structure-prediction",
+    "preferGlobal": true,
+    "version": "0.0.1",
+    "author": "Jake Rivett <jake_rivett@hotmail.com>",
+    "description": "front-end component for creating molecular structures graph inputs and reading predictions genreated from the back-end",
+    "engines": {
+        "node": ">=0.10"
+    },
+    "dependencies": {
+        "bootstrap3": "^3.3.5",
+        "jquery": "^3.3.1",
+        "moment": "^2.22.1"
+    }
+}
