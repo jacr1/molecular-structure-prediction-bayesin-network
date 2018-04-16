@@ -1,7 +1,9 @@
 ﻿
 # Molecular Structure Prediction Using Bayesian Networks
 
-This repo contains code to create a molecular strucutre graph wihtin an SQL database. While the user is drawing it takes the data and creates a baysin network to try and predict what the user is trying to create from past data. 
+This repo contains code to create a molecular strucutre graph wihtin an SQL database. While the user is drawing it takes the data and creates a baysin network to try and predict what the user is trying to create from past data.
+
+![alt text](https://raw.githubusercontent.com/jacr1/molecular-structure-prediction-bayesin-network/master/documentation/readmeImage.png)
 
 ## Getting Started
 
