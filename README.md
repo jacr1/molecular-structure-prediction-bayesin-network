@@ -20,6 +20,19 @@ Move into the /rest-api sub-directory
 
 > gradle build
 
+### How to Build Front-end
+
+Move into the /front-end sub-directory
+
+1. run npm install
+
+2. Apply for getting the Ketcher 2.0 code from: 
+> http://lifescience.opensource.epam.com/download/ketcher.html
+
+3. Place the ketcher lib into directory /front-end/lib/
+
+## Run
+
 ### Run database
 
  1. You now need to download and run hsqldb.
